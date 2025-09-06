@@ -1,0 +1,33 @@
+<div id="addBotModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Adicionar Novo Bot</h3>
+            <button class="modal-close" onclick="closeModal('addBotModal')">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+            <form id="addBotForm">
+                <div class="form-group">
+                    <label for="botToken">Token do Bot</label>
+                    <input 
+                        type="text" 
+                        id="botToken" 
+                        name="token" 
+                        placeholder="Insira o token do seu bot"
+                        required
+                    >
+                    <small>Obtenha o token com @BotFather no Telegram</small>
+                </div>
+            </form>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn btn-secondary" onclick="closeModal('addBotModal')">
+                Cancelar
+            </button>
+            <button class="btn btn-primary" onclick="addBot()">
+                Adicionar Bot
+            </button>
+        </div>
+    </div>
+</div>

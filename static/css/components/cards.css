@@ -1,0 +1,107 @@
+.bot-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.bot-card:hover {
+    border-color: var(--color-primary);
+    transform: translateX(5px);
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+}
+
+.bot-info {
+    flex: 1;
+}
+
+.bot-name {
+    font-size: 18px;
+    color: var(--color-primary);
+    margin-bottom: 5px;
+}
+
+.bot-stats {
+    display: flex;
+    gap: 20px;
+    color: var(--color-text-secondary);
+    font-size: 14px;
+}
+
+.bot-stats span {
+    display: flex;
+    align-items: center;
+}
+
+.bot-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-icon {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.btn-icon:hover {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    border-color: var(--color-primary);
+}
+
+/* Card de Status */
+.status-card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.status-card.online {
+    border-color: var(--color-success);
+}
+
+.status-card.offline {
+    border-color: var(--color-error);
+}
+
+.status-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.status-title {
+    font-size: 16px;
+    color: var(--color-text);
+}
+
+.status-badge {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.online {
+    background-color: rgba(0, 255, 0, 0.2);
+    color: var(--color-success);
+}
+
+.status-badge.offline {
+    background-color: rgba(255, 51, 51, 0.2);
+    color: var(--color-error);
+}

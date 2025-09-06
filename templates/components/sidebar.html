@@ -1,0 +1,47 @@
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <h2>Bot Manager</h2>
+        <span class="version">v1.0</span>
+    </div>
+    
+    <nav class="sidebar-nav">
+        <a href="/" class="nav-item {% if page == 'dashboard' %}active{% endif %}">
+            <span class="icon">🏠</span>
+            <span>Dashboard</span>
+        </a>
+        
+        <a href="/bots" class="nav-item {% if page == 'bots' %}active{% endif %}">
+            <span class="icon">🤖</span>
+            <span>Meus Bots</span>
+        </a>
+        
+        <a href="#" class="nav-item" onclick="openAddBotModal()">
+            <span class="icon">➕</span>
+            <span>Criar Novo Bot</span>
+        </a>
+        
+        <a href="/settings" class="nav-item {% if page == 'settings' %}active{% endif %}">
+            <span class="icon">⚙️</span>
+            <span>Configurações</span>
+        </a>
+        
+        <a href="/banks" class="nav-item {% if page == 'banks' %}active{% endif %}">
+            <span class="icon">💳</span>
+            <span>Bancos</span>
+        </a>
+    </nav>
+
+    <div style="border-top: 1px solid #333; margin-top: 20px; padding-top: 20px;">
+        <a href="/logout" class="nav-item">
+            <span class="icon">🚪</span>
+            <span>Sair</span>
+        </a>
+    </div>
+    
+    <div class="sidebar-footer">
+        <div class="system-status">
+            <span class="status-dot active"></span>
+            <span>Sistema Online</span>
+        </div>
+    </div>
+</aside>

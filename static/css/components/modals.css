@@ -1,0 +1,247 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+}
+
+.modal-large {
+    max-width: 700px;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    color: var(--color-primary);
+    font-size: 20px;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--color-text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: var(--color-primary);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    padding: 20px;
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Lista de Planos no Modal */
+#plansList {
+    margin-bottom: 15px;
+}
+
+.plan-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.plan-item input {
+    flex: 1;
+}
+
+.plan-item button {
+    padding: 8px 12px;
+    background-color: var(--color-error);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.plan-item button:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para Planos */
+.plan-item {
+    background: #0a0a0a;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.plan-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #00ff00;
+}
+
+.plan-fields {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+}
+
+.plan-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-field label {
+    font-size: 12px;
+    color: #00ff00;
+    margin-bottom: 3px;
+}
+
+.plan-field input {
+    padding: 8px;
+    background: #000;
+    border: 1px solid #333;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.plan-field input:focus {
+    outline: none;
+    border-color: #00ff00;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+}
+
+.btn-remove-plan {
+    background: #ff3333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-remove-plan:hover {
+    background: #cc0000;
+}
+
+/* Upload de arquivo */
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 2px dashed #00ff00;
+    color: #00ff00;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: rgba(0, 255, 0, 0.1);
+    border-color: #00cc00;
+}
+
+#mediaPreview {
+    text-align: center;
+    padding: 10px;
+    min-height: 50px;
+}
+
+#mediaPreview img {
+    border: 2px solid #00ff00;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+#mediaPreview p {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.1);
+    border-radius: 4px;
+}
+
+/* Preview de mídia limpo */
+#mediaPreview {
+    text-align: center;
+    padding: 10px;
+    min-height: 50px;
+}
+
+#mediaPreview img {
+    border: 1px solid #333;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Remover qualquer fundo verde do preview */
+#mediaPreview p {
+    margin: 10px 0;
+    color: #888;
+    /* Removido: background verde */
+}
+
+/* Input de arquivo mais discreto */
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #000;
+    border: 2px dashed #333;
+    color: #888;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #555;
+}

@@ -1,0 +1,80 @@
+<div id="configBotModal" class="modal">
+    <div class="modal-content modal-large">
+        <div class="modal-header">
+            <h3>Configurar Bot</h3>
+            <button class="modal-close" onclick="closeModal('configBotModal')">&times;</button>
+        </div>
+        
+        <div class="modal-body">
+            <form id="configBotForm">
+                <input type="hidden" id="configBotId">
+                <input type="hidden" id="mediaUrl">
+                <input type="hidden" id="mediaType">
+                
+                <div class="form-section">
+                    <h4>Mídia</h4>
+                    
+                    <!-- Upload de arquivo -->
+                    <div class="form-group">
+                        <label for="mediaFile">Upload de Mídia</label>
+                        <input 
+                            type="file" 
+                            id="mediaFile" 
+                            name="media_file" 
+                            accept="image/*,video/*"
+                            onchange="handleFileUpload(this)"
+                        >
+                        <small>Formatos: JPG, PNG, MP4 (máx. 10MB)</small>
+                    </div>
+                    
+                    <!-- Preview da mídia (apenas preview visual) -->
+                    <div id="mediaPreview"></div>
+                </div>
+                
+                <div class="form-section">
+                    <h4>Mensagens</h4>
+                    <div class="form-group">
+                        <label for="message1">Mensagem 1</label>
+                        <textarea 
+                            id="message1" 
+                            name="message_1" 
+                            rows="3"
+                            placeholder="Digite a primeira mensagem"
+                        ></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message2">Mensagem 2</label>
+                        <textarea 
+                            id="message2" 
+                            name="message_2" 
+                            rows="3"
+                            placeholder="Digite a segunda mensagem"
+                        ></textarea>
+                    </div>
+                    
+                </div>
+                
+                <div class="form-section">
+                    <h4>Planos</h4>
+                    <div id="plansList"></div>
+                    <button type="button" class="btn btn-secondary" onclick="addPlanField()">
+                        + Adicionar Plano
+                    </button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="modal-footer">
+            <button class="btn btn-danger" onclick="deleteBot()">
+                Excluir Bot
+            </button>
+            <button class="btn btn-secondary" onclick="closeModal('configBotModal')">
+                Cancelar
+            </button>
+            <button class="btn btn-primary" onclick="saveConfig()">
+                Salvar Configurações
+            </button>
+        </div>
+    </div>
+</div>

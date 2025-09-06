@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Bot Manager{% endblock %}
+{% block header %}Dashboard{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/pages/dashboard.css">
+{% endblock %}
+
+{% block content %}
+<!-- Estatísticas -->
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-value">{{ total_bots }}</div>
+        <div class="stat-label">Total de Bots</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">{{ active_bots }}</div>
+        <div class="stat-label">Bots Ativos</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Mensagens Hoje</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">0</div>
+        <div class="stat-label">Usuários Únicos</div>
+    </div>
+</div>
+
+<!-- Ações Rápidas -->
+<div class="quick-actions">
+    <button class="btn btn-primary" onclick="openAddBotModal()">
+        + Adicionar Bot
+    </button>
+    <button class="btn btn-secondary" onclick="location.href='/bots'">
+        Gerenciar Bots
+    </button>
+</div>
+
+<!-- Lista de Bots -->
+<div class="section">
+    <h2>Meus Bots</h2>
+    
+    <div class="bots-list">
+        {% for bot in bots %}
+        <div class="bot-card" data-bot-id="{{ bot.id }}">
+            <div class="bot-info">
+                <div class="bot-name">@{{ bot.username }}</div>
+                <div class="bot-stats">
+                    <span>{{ bot.total_users }} usuários</span>
+                    <span>{{ bot.total_messages }} mensagens</span>
+                </div>
+            </div>
+            <div class="bot-actions">
+                <button class="btn-icon" onclick="configureBotModal('{{ bot.id }}')" title="Configurar">⚙️</button>
+                <button class="btn-icon" onclick="viewBotStats('{{ bot.id }}')" title="Estatísticas">📊</button>
+            </div>
+        </div>
+        {% endfor %}
+        
+        {% if not bots %}
+        <div class="empty-state">
+            <p>Nenhum bot cadastrado ainda.</p>
+            <button class="btn btn-primary" onclick="openAddBotModal()">
+                Adicionar Primeiro Bot
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/pages/dashboard.js"></script>
+{% endblock %}
